@@ -1,13 +1,16 @@
-import FruitList from "./components/FruitList.tsx";
-import FilterTest from "./components/FilterTest.tsx";
-import RecipeList from "./components/RecipeList.tsx";
-
-
+import ButtonGroup from "./components/ButtonGroup.tsx";
 export default function App() {
+  const initialButtons = [
+    {id: 1, label: "Button 1", icon: "🔥", isDisabled: false},
+    {id: 2, label: "Button 2", icon: "💧", isDisabled: false},
+    {id: 3, label: "Button 3", icon: "🌱", isDisabled: true},
+    {id: 4, label: "Button 4", icon: "⚡", isDisabled: false},
+  ];
 
   return (
     <>
-      <RecipeList></RecipeList>
+      <ButtonGroup initialButtons={initialButtons}
+      ></ButtonGroup>
     </>
   );
 };
