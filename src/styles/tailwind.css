@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+
+@layer components {
+    .btns {
+        @apply bg-green-500 text-white py-3 px-5 rounded border-none cursor-pointer transition-colors duration-300 hover:bg-green-600
+    }
+    .input{
+        @apply border-[2px] border-solid border-[#333] cursor-pointer text-[18px] hover:shadow-[1px_1px_2px_#333]
+    }
+}
