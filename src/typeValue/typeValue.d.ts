@@ -6,3 +6,10 @@ interface ValueType {
   objectValue: { name:string, age:number },
   handleClick: () =>{}
 }
+
+type CalculatorState = {
+  currentNumber: string;
+  previousNumber: string;
+  operation: null | string;
+  isNewNumber: boolean;
+}
