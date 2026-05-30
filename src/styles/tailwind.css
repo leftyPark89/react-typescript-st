@@ -5,7 +5,26 @@
     .btns {
         @apply bg-green-500 text-white py-3 px-5 rounded border-none cursor-pointer transition-colors duration-300 hover:bg-green-600
     }
-    .input{
-        @apply border-[2px] border-solid border-[#333] cursor-pointer text-[18px] hover:shadow-[1px_1px_2px_#333]
+    /*.input{*/
+    /*    @apply border-[2px] border-solid border-[#333] cursor-pointer text-[18px] hover:shadow-[1px_1px_2px_#333]*/
+    /*}*/
+    .calc-input{
+        @apply bg-white col-span-4 text-right px-[10px] border-[2px] border-solid border-[#333] cursor-pointer text-[18px] hover:shadow-[1px_1px_2px_#333]
     }
+    .calc-num{
+        @apply bg-white border-[2px] border-solid border-[#333] cursor-pointer text-[18px] hover:shadow-[1px_1px_2px_#333]
+    }
+    .calc-operator{
+        @apply bg-[orange] border-[2px] border-solid border-[#333] cursor-pointer text-[18px] hover:shadow-[1px_1px_2px_#333]
+    }
+    .calc-clear{
+        @apply bg-[red] col-span-3 border-[2px] border-solid border-[#333] cursor-pointer text-[18px] hover:shadow-[1px_1px_2px_#333]
+    }
+    .calc-result{
+        @apply border-[2px] border-solid border-[#333] cursor-pointer text-[18px] hover:shadow-[1px_1px_2px_#333] bg-[orange] col-span-2
+    }
+    .calc-dot{
+        @apply bg-[green] border-[2px] border-solid border-[#333] cursor-pointer text-[18px] hover:shadow-[1px_1px_2px_#333]
+    }
+
 }
