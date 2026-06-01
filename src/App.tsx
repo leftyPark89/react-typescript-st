@@ -1,9 +1,10 @@
-import Calculator from "./components/Calculator.tsx";
+import Mission from "./components/controlled/Mission.tsx";
+
 
 export default function App() {
   return (
     <>
-      <Calculator></Calculator>
+      <Mission></Mission>
     </>
   );
 };
