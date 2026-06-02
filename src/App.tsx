@@ -1,10 +1,10 @@
-import UserInfoform from "./components/uncontrolled/UserInfoform.tsx";
+import Login from "./components/form3/Login.tsx";
 
 
 export default function App() {
   return (
     <>
-      <UserInfoform></UserInfoform>
+      <Login></Login>
     </>
   );
 };
