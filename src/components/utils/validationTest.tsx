@@ -1,11 +1,8 @@
-export const validationEmailTest = (email:string) => {
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return "올바른 이메일 입력 필요";
-  }
+export const validateEmail = (email:string) => {
+  const validAdress = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return validAdress.test(email);
 }
 
-export const validationPwTest = (password:string) => {
-  if (password.length < 8) {
-    return "비밀번호는 8자 이상이어야 합니다.";
-  }
+export const validatePw = (password: string) => {
+  return password.length >= 8;
 }
