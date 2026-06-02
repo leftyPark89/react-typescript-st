@@ -1,10 +1,10 @@
-import Mission from "./components/controlled/Mission.tsx";
+import UserInfoform from "./components/uncontrolled/UserInfoform.tsx";
 
 
 export default function App() {
   return (
     <>
-      <Mission></Mission>
+      <UserInfoform></UserInfoform>
     </>
   );
 };
