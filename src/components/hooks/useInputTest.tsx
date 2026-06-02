@@ -1,13 +1,13 @@
 import {useState} from "react";
 
-export default function UseInput(initialValue = "", validateFn: (value: string) => string | undefined) {
+export default function useInputTest(initialValue = "", validateFn:(value:string) => string | undefined) {
 
-  const [error, setError] = useState("");
   const [value, setValue] = useState(initialValue);
-  const handleValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const [error, setError] = useState("");
+  const handleValueChange = (e: React.ChangeEvent<HTMLInputElement, HTMLInputElement>) => {
     setValue(e.target.value);
     setError(validateFn(e.target.value) || "");
-  };
+  }
 
   return (
     {

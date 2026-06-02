@@ -38,16 +38,16 @@ export default function CheckBox() {
           <label>약관 동의</label>
         </div>
         <div>
-          <input type="checkbox" value="사과" ref={(el) => fruitRef.current[0] = el!}/>
-          <label>사과</label>
+          {/*<input type="checkbox" value="사과" ref={(el) => fruitRef.current[0] = el!}/>*/}
+          {/*<label>사과</label>*/}
         </div>
         <div>
-          <input type="checkbox" value="오렌지" ref={(el) => fruitRef.current[1] = el!}/>
-          <label>오렌지</label>
+          {/*<input type="checkbox" value="오렌지" ref={(el) => fruitRef.current[1] = el!}/>*/}
+          {/*<label>오렌지</label>*/}
         </div>
         <div>
-          <input type="checkbox" value="포도" ref={(el) => fruitRef.current[2] = el!}/>
-          <label>포도</label>
+          {/*<input type="checkbox" value="포도" ref={(el) => fruitRef.current[2] = el!}/>*/}
+          {/*<label>포도</label>*/}
         </div>
         <button type="submit">submit</button>
       </form>
