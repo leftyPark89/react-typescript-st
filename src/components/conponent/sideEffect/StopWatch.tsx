@@ -1,26 +1,29 @@
-import { Pause, Play, RotateCcw } from "lucide-react";
+import {Pause, Play, RotateCcw} from "lucide-react";
 import {useEffect, useState} from "react";
-import { twMerge } from 'tailwind-merge';
+import {twMerge} from "tailwind-merge";
 
-export default function StopWatch() {
-
+export default function Stopwatch() {
   const [time, setTime] = useState(0); // ms
   const [isRunning, setIsRunning] = useState(false);
 
-  
   useEffect(() => {
     let intervalId: number;
     if (isRunning) {
       intervalId = setInterval(() => {
-        setTime((time) => time + 10);
-      })
+        setTime(time => time + 10);
+      }, 10)
     }
+    console.log("sdfsdf",intervalId);
     return () => {
-      if (intervalId) clearInterval(intervalId);
+      if(intervalId) clearInterval(intervalId);
     }
-
 
   }, [isRunning]);
+
+  const handleReset = ()=> {
+    setTime(0);
+    setIsRunning(false);
+  }
 
   const formatTime = (ms: number) => {
     const minutes = Math.floor(ms / 60000);
@@ -31,11 +34,6 @@ export default function StopWatch() {
       .toString()
       .padStart(2, "0")}.${milliseconds.toString().padStart(2, "0")}`;
   };
-
-  const handleReset = () => {
-    setTime(0);
-    setIsRunning(false);
-  }
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center p-4">
@@ -53,14 +51,12 @@ export default function StopWatch() {
               `p-3 rounded-full transition-colors bg-green-500 hover:bg-green-600 text-white`,
               isRunning && "bg-red-500 hover:bg-red-600"
             )}
-            onClick={()=>setIsRunning((isRunning) => !isRunning)}
+            onClick={() => setIsRunning(isRunning => !isRunning)}
           >
-            {/* 시작버튼 <Play size={24} /> */}
-            {isRunning && <Pause size={24} />}
-
+            {/* 시작버튼  */}
+            {!isRunning && <Play size={24}/>}
             {/* 정지버튼   */}
-            {!isRunning && <Play size={24} />}
-
+            {isRunning && <Pause size={24}/>}
           </button>
 
           <button
@@ -73,4 +69,4 @@ export default function StopWatch() {
       </div>
     </div>
   );
-};
+}
