@@ -3,19 +3,20 @@ import Button from "./html/ButtonProps.tsx";
 import SvgPencil from "./svg/SvgPencil.tsx";
 import SvgClose from "./svg/SvgClose.tsx";
 import Input from "./html/Input.tsx";
-import {useState} from "react";
+import React, { useState} from "react";
 
-export default function TodoListItem({
+export default React.memo(function TodoListItem({
                                        todo,
                                        chkToggle,
                                        deleteTodo,
                                        modifyBrn
                                      }: {
   todo: Todo;
-  chkToggle: (id: number) => void;
-  deleteTodo: (id: number) => void;
-  modifyBrn: (id: number, text: string) => void;
+  chkToggle: (id: string) => void;
+  deleteTodo: (id: string) => void;
+  modifyBrn: (id: string, text: string) => void;
 }) {
+  console.log("this is rendering")
   // 수정 상태 및 기능
   const [modify, setModify] = useState(false);
   const [modiText, setModiText] = useState("");
@@ -69,4 +70,4 @@ export default function TodoListItem({
         </li>
     </>
   );
-};
+});

@@ -7,7 +7,6 @@ type CheckboxProps = Omit<React.ComponentPropsWithoutRef<"input">, "type"> & {
 export default function Checkbox(props: CheckboxProps) {
 
   const {parentClassName, children, ...rest} = props;
-  console.log({parentClassName, children, ...rest})
   const uuid = useId();
   return (
     <>

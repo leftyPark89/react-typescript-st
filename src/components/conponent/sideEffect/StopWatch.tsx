@@ -13,7 +13,6 @@ export default function Stopwatch() {
         setTime(time => time + 10);
       }, 10)
     }
-    console.log("sdfsdf",intervalId);
     return () => {
       if(intervalId) clearInterval(intervalId);
     }

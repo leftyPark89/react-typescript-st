@@ -8,9 +8,9 @@ export default function TodoList({
                                    modifyBrn
                                  }: {
   todos: Todo[];
-  chkToggle: (id: number) => void;
-  deleteTodo: (id: number) => void;
-  modifyBrn: (id: number, text: string) => void;
+  chkToggle: (id: string) => void;
+  deleteTodo: (id: string) => void;
+  modifyBrn: (id: string, text: string) => void;
 }) {
   return (
     <>
