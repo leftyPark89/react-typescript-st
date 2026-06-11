@@ -1,9 +1,9 @@
 import {useMemo, useState} from "react";
 
-const initialItems = new Array(29_999_9999).fill(0).map((_, i) => {
+const initialItems = new Array(29_999_999).fill(0).map((_, i) => {
   return {
     id: i,
-    selected: i === 29_999_9998,
+    selected: i === 29_999_998,
   }
 });
 
@@ -13,7 +13,7 @@ export default function UseMemo() {
   const selectItems = useMemo(() =>
       initialItems.find((item) =>
         item.selected),
-    [count]);
+    []);
 
   return (
     <>

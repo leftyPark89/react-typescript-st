@@ -53,13 +53,13 @@ export default function TodoApp() {
   }, [todos]);
 
 
-  useEffect(() => {
-    const testTodo = Array.from(
-      {length: 1000},
-      (_, index) => `todo items ${index + 1}`
-    )
-    // testTodo.forEach(item => addTodo(item));
-  }, []);
+  // useEffect(() => {
+  //   const testTodo = Array.from(
+  //     {length: 1000},
+  //     (_, index) => `todo items ${index + 1}`
+  //   )
+  //   testTodo.forEach(item => addTodo(item));
+  // }, []);
 
   return (
     <>
