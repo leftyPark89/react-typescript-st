@@ -1,8 +1,7 @@
-import {useContext} from "react";
-import {CounterContext} from "./App13.tsx";
+import useCounter from "../../../context/counter/useCounter.ts";
 
 export default function CountOutside() {
-  const {count} = useContext(CounterContext)!;
+  const {count} = useCounter()
   return (
     <>
       <h1>CountOutside: {count}</h1>

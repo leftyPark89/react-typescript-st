@@ -1,8 +1,7 @@
-import {useContext} from "react";
-import {CounterContext} from "./App13.tsx";
+import useCounter from "../../../context/counter/useCounter.ts";
 
 export default function CountButton() {
-  const { increment, decrement, reset } = useContext(CounterContext)!
+  const { increment, decrement, reset } = useCounter()
   return (
     <>
       <button onClick={decrement}>감소</button>

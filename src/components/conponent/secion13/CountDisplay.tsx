@@ -1,8 +1,7 @@
-import {useContext} from "react";
-import {CounterContext} from "./App13.tsx";
+import useCounter from "../../../context/counter/useCounter.ts";
 
 export default function CountDisplay() {
-  const {count} = useContext(CounterContext)!
+  const {count} = useCounter()
   return (
     <>
       <h1>Count : {count}</h1>
