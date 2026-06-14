@@ -1,4 +1,4 @@
-import useCounter from "../../../context/counter/useCounter.ts";
+import {useCounter} from "../../../context/counter/useCounter.ts";
 
 export default function CountDisplay() {
   const {count} = useCounter()

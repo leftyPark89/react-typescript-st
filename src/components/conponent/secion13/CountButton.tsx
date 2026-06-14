@@ -1,7 +1,7 @@
-import useCounter from "../../../context/counter/useCounter.ts";
+import { useCounterAction} from "../../../context/counter/useCounter.ts";
 
 export default function CountButton() {
-  const { increment, decrement, reset } = useCounter()
+  const { increment, decrement, reset } = useCounterAction()
   return (
     <>
       <button onClick={decrement}>감소</button>

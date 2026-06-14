@@ -5,12 +5,11 @@ import CounterProvider from "../../../context/counter/CounterProvider.tsx";
 
 export default function App13() {
 
-
   return (
     <>
       <CounterProvider>
-        <Count></Count>
-        <CountOutside></CountOutside>
+        <Count />
+        <CountOutside />
       </CounterProvider>
     </>
   );
