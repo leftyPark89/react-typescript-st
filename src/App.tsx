@@ -10,7 +10,8 @@ export default function App() {
 
   return (
     <>
-      <AppUserProfile></AppUserProfile>
+
+      <AppUserProfile />
       {/*<App13></App13>*/}
       {/*<TestApp />*/}
       {/*<UseMemo/>*/}

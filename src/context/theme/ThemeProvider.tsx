@@ -14,7 +14,6 @@ export default function ThemeProvider({children}: { children: React.ReactNode })
         <ThemeContext value={{theme}}>
           {children}
         </ThemeContext>
-
       </ThemeContextAction>
     </>
   );
