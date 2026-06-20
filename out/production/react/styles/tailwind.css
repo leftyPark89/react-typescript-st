@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@utility font-inter {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+
+@layer components {
+    .input-field {
+        @apply font-inter w-full h-11 rounded-lg text-sm px-4 border border-[#4F4F4F]  placeholder:text-[#acacac];
+    }
+    .btns {
+        @apply bg-green-500 text-white py-3 px-5 rounded border-none cursor-pointer transition-colors duration-300 hover:bg-green-600
+    }
+    /*.input{*/
+    /*    @apply border-[2px] border-solid border-[#333] cursor-pointer text-[18px] hover:shadow-[1px_1px_2px_#333]*/
+    /*}*/
+    .calc-input{
+        @apply bg-white col-span-4 text-right px-[10px] border-[2px] border-solid border-[#333] cursor-pointer text-[18px] hover:shadow-[1px_1px_2px_#333]
+    }
+    .calc-num{
+        @apply bg-white border-[2px] border-solid border-[#333] cursor-pointer text-[18px] hover:shadow-[1px_1px_2px_#333]
+    }
+    .calc-operator{
+        @apply bg-[orange] border-[2px] border-solid border-[#333] cursor-pointer text-[18px] hover:shadow-[1px_1px_2px_#333]
+    }
+    .calc-clear{
+        @apply bg-[red] col-span-3 border-[2px] border-solid border-[#333] cursor-pointer text-[18px] hover:shadow-[1px_1px_2px_#333]
+    }
+    .calc-result{
+        @apply border-[2px] border-solid border-[#333] cursor-pointer text-[18px] hover:shadow-[1px_1px_2px_#333] bg-[orange] col-span-2
+    }
+    .calc-dot{
+        @apply bg-[green] border-[2px] border-solid border-[#333] cursor-pointer text-[18px] hover:shadow-[1px_1px_2px_#333]
+    }
+
+}

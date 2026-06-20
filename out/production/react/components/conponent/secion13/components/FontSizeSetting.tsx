@@ -1,13 +1,11 @@
 import {Type} from "lucide-react";
 import {useSetting, useSettingAction} from "../../../../context/userProfileSetting/useSetting.ts";
 import {twMerge} from "tailwind-merge";
-import useTranslation from "../../../../libs/useTranslation.ts";
 
 export default function FontSizeSetting() {
 
   const {preferences} = useSetting();
   const {updateFontSize} = useSettingAction();
-  const { t } = useTranslation();
 
   return (
     <>
@@ -15,7 +13,7 @@ export default function FontSizeSetting() {
         <div className="flex items-center gap-3 mb-4">
           <Type className="text-blue-500" size={24}/>
           <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
-            {t.fontSize.label}
+            글자 크기
           </h2>
         </div>
 
@@ -36,11 +34,7 @@ export default function FontSizeSetting() {
             onClick={() => {updateFontSize(size)
             console.log("글자크기 : ", size)}}
             >
-              {size === "small"
-                ? t.fontSize.small
-                : size === "medium"
-                  ? t.fontSize.medium
-                  : t.fontSize.large}
+              {size === "small" ? "작게" : size === "medium" ? "보통" : "크게"}
             </button>
           ))}
 

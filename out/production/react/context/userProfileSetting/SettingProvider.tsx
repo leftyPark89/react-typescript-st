@@ -1,6 +1,5 @@
 import {SettingContext, SettingContextAction} from "./SettingContext.ts";
-import {useEffect, useLayoutEffect, useMemo, useState} from "react";
-import {FlaskConical} from "lucide-react";
+import {useEffect, useMemo, useState} from "react";
 
 
 const defaultValue: UserPreferences = {
@@ -19,11 +18,7 @@ export default function SettingProvider({
   children: React.ReactNode;
 }) {
 
-  // const [preferences, setPreferences] = useState<UserPreferences>(defaultValue);
-  const [preferences, setPreferences] = useState<UserPreferences>(()=> {
-    const save = localStorage.getItem("preferences");
-    return save ? JSON.parse(save) : defaultValue;
-  });
+  const [preferences, setPreferences] = useState<UserPreferences>(defaultValue);
 
   // UserPreferences["language"]에서 defaultValue["language"]을 쓰는게 아닌지? 그리고
   // []을 사용한거면 "ko" 가오는것인지? 아니면 language: "ko"가 오는것인지?
@@ -50,28 +45,12 @@ export default function SettingProvider({
     setPreferences((preferences) => ({...preferences, colorScheme}))
   }
 
-  // useEffect(() => { // 최초 렌더링이 된 이후에 상태 변경
-  useLayoutEffect(() => { // 렌더링된기 이전에 상태 반영 (DOM 조작 시에는 useLayoutEffect가 효과적)
-
-    localStorage.setItem("preferences", JSON.stringify(preferences));
-
+  useEffect(() => {
     document.documentElement.style.fontSize = {
       small: "14px",
       medium: "16px",
       large: "18px",
     }[preferences.fontSize];
-    // 이 아래 부분 구현되는 과정과 개념들 설명해줘
-    if (preferences.colorScheme === "system") {
-      document.documentElement.classList.remove("light", "dark");
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        document.documentElement.classList.add("dark");
-      }else{
-        document.documentElement.classList.add("light");
-      }
-    }else{
-      document.documentElement.classList.remove("light", "dark");
-      document.documentElement.classList.add(preferences.colorScheme);
-    }
   }, [preferences]);
 
 

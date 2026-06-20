@@ -2,16 +2,14 @@ import LanguageSetting from "./components/LanguageSetting";
 import FontSizeSetting from "./components/FontSizeSetting";
 import AlarmSetting from "./components/AlarmSetting";
 import ThemeSetting from "./components/ThemeSetting";
-import useTranslation from "../../../libs/useTranslation.ts";
 
 export default function AppUserProfile() {
-  const { t } = useTranslation();
   return (
     <>
       <div className="min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
         <div className="max-w-2xl mx-auto p-6">
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-            {t.profileTitle}
+            사용자 설정
           </h1>
 
           <div className="space-y-6">
