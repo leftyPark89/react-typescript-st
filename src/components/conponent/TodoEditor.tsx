@@ -1,14 +1,11 @@
 import Input from "./html/Input.tsx";
 import Button from "./html/ButtonProps.tsx";
 import {useState} from "react";
-import * as React from "react";
+import {useTodoAction} from "../../context/todo/useTodo.ts";
 
-export default function TodoEditor({
-                                     addTodo
-                                   }: {
-  addTodo: (text: string) => void;
-}) {
+export default function TodoEditor() {
   const [text, setText] = useState("");
+  const {addTodo} = useTodoAction();
   const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     if(text.trim() === "") return;

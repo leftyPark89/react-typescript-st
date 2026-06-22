@@ -1,6 +1,5 @@
 import {SettingContext, SettingContextAction} from "./SettingContext.ts";
-import {useEffect, useLayoutEffect, useMemo, useState} from "react";
-import {FlaskConical} from "lucide-react";
+import { useLayoutEffect, useMemo, useState} from "react";
 
 
 const defaultValue: UserPreferences = {

@@ -1,17 +1,9 @@
 import TodoListItem from "./TodoListItem.tsx";
 import TodoListEmpty from "./TodoListEmpty.tsx";
+import {useTodo} from "../../context/todo/useTodo.ts";
 
-export default function TodoList({
-                                   todos,
-                                   chkToggle,
-                                   deleteTodo,
-                                   modifyBrn
-                                 }: {
-  todos: Todo[];
-  chkToggle: (id: string) => void;
-  deleteTodo: (id: string) => void;
-  modifyBrn: (id: string, text: string) => void;
-}) {
+export default function TodoList() {
+  const {todos} = useTodo();
   return (
     <>
       <ul className="todo__list">
@@ -21,11 +13,7 @@ export default function TodoList({
         {/*할 일 목록이 있을 때 */}
         {
           todos.map((todo) => (
-            <TodoListItem key={todo.id} todo={todo}
-                          chkToggle={chkToggle}
-                          deleteTodo={deleteTodo}
-                          modifyBrn={modifyBrn}
-            />
+            <TodoListItem key={todo.id} todo={todo}/>
           ))
         }
       </ul>

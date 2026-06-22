@@ -1,4 +1,5 @@
 import TodoList from "./components/conponent/TodoApp.tsx";
+import TodoProvider from "./context/todo/TodoProvider.tsx";
 // import CountApp from "./components/conponent/sideEffect/CountApp.tsx";
 // import {useCallback, useState} from "react";
 // import UseMemo from "./components/conponent/etc/UseMemo.tsx";
@@ -18,7 +19,9 @@ export default function App() {
       {/*<App13 />*/}
       {/*<TestApp />*/}
       {/*<UseMemo/>*/}
-      <TodoList/ >
+      <TodoProvider>
+        <TodoList></TodoList>
+      </TodoProvider>
       {/*<CountApp/>*/}
     </>
   );

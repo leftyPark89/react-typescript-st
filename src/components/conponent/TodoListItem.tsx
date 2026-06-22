@@ -4,19 +4,17 @@ import SvgPencil from "./svg/SvgPencil.tsx";
 import SvgClose from "./svg/SvgClose.tsx";
 import Input from "./html/Input.tsx";
 import React, { useState} from "react";
+import {useTodoAction} from "../../context/todo/useTodo.ts";
 
 export default React.memo(function TodoListItem({
                                        todo,
-                                       chkToggle,
-                                       deleteTodo,
-                                       modifyBrn
                                      }: {
   todo: Todo;
-  chkToggle: (id: string) => void;
-  deleteTodo: (id: string) => void;
-  modifyBrn: (id: string, text: string) => void;
 }) {
-  console.log("this is rendering")
+  console.log("this is rendering");
+
+  const {modifyBrn, chkToggle, deleteTodo} = useTodoAction()
+
   // 수정 상태 및 기능
   const [modify, setModify] = useState(false);
   const [modiText, setModiText] = useState("");
